@@ -46,8 +46,8 @@ Run `npm run cypress:coverage` to get the cypress tests (component and e2e) repo
 Run `npm run all:coverage` to get the combined report (jest and cypress).
 
 ### Examples
-![cli-code-coverage](images/cli-code-coverage.png)
-![html-code-coverage](images/html-code-coverage.png)
+![cli-code-coverage](src/assets/images/cli-code-coverage.png)
+![html-code-coverage](src/assets/images/html-code-coverage.png)
 
 ## Project Info
 
