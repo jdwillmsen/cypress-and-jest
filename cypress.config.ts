@@ -3,6 +3,8 @@ import registerCodeCoverageTasks from "@cypress/code-coverage/task";
 import coverageWebpack from "./cypress/coverage.webpack";
 
 export default defineConfig({
+
+  projectId: "fmsxnp",
   
   e2e: {
     'baseUrl': 'http://localhost:4200',
