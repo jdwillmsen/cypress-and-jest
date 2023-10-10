@@ -1,5 +1,6 @@
 # Angular 16 - Cypress + Jest Code Coverage Setup
 
+[![Default Project](https://img.shields.io/endpoint?url=https://cloud.cypress.io/badge/detailed/fmsxnp&style=flat&logo=cypress)](https://cloud.cypress.io/projects/fmsxnp/runs)
 ## Running unit tests
 
 Run `npm run jest` to execute the unit tests.
