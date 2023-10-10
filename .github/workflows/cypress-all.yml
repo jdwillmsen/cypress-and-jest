@@ -42,7 +42,7 @@ jobs:
         with:
           record: true
           parallel: true
-          group: 'UI'
+          group: 'CT'
           start: npm start
           wait-on: 'http://localhost:4200'
           component: true
@@ -70,7 +70,7 @@ jobs:
         with:
           record: true
           parallel: true
-          group: 'UI'
+          group: 'E2E'
           start: npm start
           wait-on: 'http://localhost:4200'
         env:
