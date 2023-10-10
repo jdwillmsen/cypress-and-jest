@@ -21,7 +21,7 @@ jobs:
           name: build
           if-no-files-found: error
           path: dist
-  cypress-run:
+  cypress-run-ct:
     runs-on: ubuntu-22.04
     needs: install
     strategy:
@@ -46,6 +46,33 @@ jobs:
           start: npm start
           wait-on: 'http://localhost:4200'
           component: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  cypress-run-e2e:
+    runs-on: ubuntu-22.04
+    needs: install
+    strategy:
+      fail-fast: false
+      matrix:
+        containers: [ 1, 2, 3, 4, 5 ]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download the build folder
+        uses: actions/download-artifact@v3
+        with:
+          name: build
+
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          record: true
+          parallel: true
+          group: 'UI'
+          start: npm start
+          wait-on: 'http://localhost:4200'
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

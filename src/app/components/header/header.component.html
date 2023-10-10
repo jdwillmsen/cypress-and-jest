@@ -1,0 +1,3 @@
+<div class="container">
+    <button [attr.data-cy]="item.display.toLowerCase() + '-button'" class="item" *ngFor="let item of items" [routerLink]="item.path">{{item.display}}</button>
+</div>
