@@ -46,7 +46,6 @@ jobs:
           start: npm start
           wait-on: 'http://localhost:4200'
           component: true
-          tag: container-${{ matrix.containers }}
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -74,7 +73,6 @@ jobs:
           group: 'E2E'
           start: npm start
           wait-on: 'http://localhost:4200'
-          tag: container-${{ matrix.containers }}
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
